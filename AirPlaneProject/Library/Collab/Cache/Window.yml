@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 61
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffe70aba2e7074048aca5de573b64a59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SimpleSelectedItems:
+    m_Keys:
+    - Assets/Prefabs/Cut Scenes Manager.prefab
+    - Assets/Prefabs/UI/GameUICanvas.prefab
+    - Assets/Scenes/GameScene1.unity
+    - Assets/Scripts/Camera.meta
+    - Assets/Scripts/Camera/CameraOffset.cs
+    - Assets/Scripts/Camera/CameraOffset.cs.meta
+    - Assets/Scripts/Player.meta
+    - Assets/Scripts/Player/OnPlaneBodyHit.cs
+    - Assets/Scripts/Player/OnPlaneBodyHit.cs.meta
+    - Assets/Scripts/Player/OnPlaneFrontHit.cs
+    - Assets/Scripts/Player/OnPlaneFrontHit.cs.meta
+    - Assets/Scripts/Player/PlayerAnimation.cs
+    - Assets/Scripts/Player/PlayerAnimation.cs.meta
+    - Assets/Scripts/Player/PlayerCharacter.cs
+    - Assets/Scripts/Player/PlayerCharacter.cs.meta
+    - Assets/Scripts/Player/PlayerController.cs
+    - Assets/Scripts/Player/PlayerController.cs.meta
+    - Assets/Scripts/UI.meta
+    - Assets/Scripts/UI/CheatsFunctionality.cs
+    - Assets/Scripts/UI/CheatsFunctionality.cs.meta
+    - Assets/Scripts/UI/GameUI.cs
+    - Assets/Scripts/UI/GameUI.cs.meta
+    - Assets/Scripts/UI/LevelButton.cs
+    - Assets/Scripts/UI/LevelButton.cs.meta
+    - Assets/Scripts/UI/MainMenuUI.cs
+    - Assets/Scripts/UI/MainMenuUI.cs.meta
+    - 
+    m_Values: 000100010101010101010101010101010101010101010101010100
+  RevisionSummary: Finished v1.1
+  ChangesSearchValue: 
+  SelectedHistoryRevision: 187edbc1294dfb87522232f5f0cdaef3546a8d02
+  HistoryPageNumber: 0
+  TabIndex: 1

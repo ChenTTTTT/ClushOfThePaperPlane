@@ -1,0 +1,83 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlayerCharacter : MonoBehaviour
+{
+    [SerializeField] GameUI ui = null;
+    [SerializeField] bool _isCrashed = false;
+    [SerializeField] int _coins = 0;
+
+    PlayerController playerController;
+    PlayerAnimation playerAnim;
+    Rigidbody rig;
+
+    Enums.playerStateType _playerState = Enums.playerStateType.None;
+
+    void Awake()
+    {
+        playerController = GetComponent<PlayerController>();
+        playerAnim = GetComponent<PlayerAnimation>();
+        rig = GetComponent<Rigidbody>();
+    }
+
+    public bool IsCrashed
+    {
+        get { return _isCrashed; }
+        set 
+        { 
+            _isCrashed = value;
+            playerAnim.SetAnimIsCrashed(value);
+            playerController.IsControllable = !value;
+
+            if (value == true)
+            {
+                _playerState = Enums.playerStateType.Lose;
+                StartCoroutine(CrashDelay());
+            }
+        }
+    }
+
+    public int Coins
+    {
+        get { return _coins; }
+        set
+        {
+            _coins = value;
+            ui.OnAddACoinToUI(_coins);
+        }
+    }
+
+    public Enums.playerStateType PlayerState
+    {
+        get { return _playerState; }
+        set
+        {
+            switch (value)
+            {
+                case Enums.playerStateType.None:
+                    ui.closeLoseAndWinScreens();
+                    break;
+                case Enums.playerStateType.Win:
+                    StartCoroutine(WinDelay());
+                    break;
+                case Enums.playerStateType.Lose:
+                    ui.OpenLoseScreen();
+                    break;
+
+            }
+        }
+    }
+
+    IEnumerator CrashDelay()
+    {
+        yield return new WaitForSeconds(1.5f);
+        PlayerState = Enums.playerStateType.Lose;
+    }
+
+    IEnumerator WinDelay()
+    {
+        yield return new WaitForSeconds(3.5f);
+        ui.OpenWinScreen();
+    }
+}
